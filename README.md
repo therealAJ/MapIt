@@ -4,3 +4,5 @@ A web application that allows you to discover tourist attractions around city of
 
 
 Todo: 
+- Implement Google Maps API Calls 
+- Generate Top 10 activities in choosen location 
