@@ -1,39 +1,15 @@
-.bg {    
-     position: relative;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-   
-     
+#content {
+    overflow-x: hidden;
 }
 
-.background {
-     position: relative;
-    width: 100%;
-    height: 100%;
-    background-position: center;
+.section-1 {
+    height: 100vh;
+    min-height: 100%;
+    max-height: 100%;
+    background: url(wonderful_nature_1920x1080.jpg) center center fixed;
     background-size: cover;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-
-    
-}
-
-.header {
-    /*    position: relative;
-            top: 50%;
-            left: 50%;
-            right: 50% */
-    ;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    color: #ddd;
+    text-shadow: 3px 4px #333;
 }
 
 .MapIt {
@@ -42,33 +18,16 @@
     font-family: 'Pacifico', cursive;
 }
 
-html,
-body {
-    max-width: 100%;
-    overflow-x: ;
-}
-
-#imaginary_container {
-    margin-top: 15%;
-    /* Don't copy this */
-}
-
-.stylish-input-group .input-group-addon {
-    background: white !important;
-}
-
-.stylish-input-group .form-control {
-    border-right: 0;
-    box-shadow: 0 0 0;
-    border-color: #ccc;
-}
-
-.stylish-input-group button {
-    border: 0;
-    background: transparent;
-}
-
 #map {
+    height: 700px;
+}
+
+.default-text {
     
-    height: 400px;
+    font-family: 'Pacifico';
+}
+
+.fa-search {
+    
+    padding-top
 }
