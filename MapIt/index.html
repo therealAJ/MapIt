@@ -1,126 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>MapIt</title>
-    
 
 
-    
+
+
     <!-- BOOTSTRAP -->
-    
+
+    <link rel="stylesheet" href="styles/style.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  
+
     <!-- Google Font -->
 
-<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <style>
-   
-    .bg {
-            position: fixed;
-            top:0;
-            left: 0;
-            
-            min-width: 100%;
-            min-height: 100%;
-        }
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     
-        .header {
-    /*    position: relative;
-            top: 50%;
-            left: 50%;
-            right: 50% */;
-position: absolute;
-               top: 50%;
-               left: 50%;
-               transform: translateX(-50%) translateY(-50%);
-
-        }
-        
-        .MapIt {
-            color: beige;
-            font-size: 8em;
-            font-family: 'Pacifico', cursive;
-        }
-    
-    html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    }
-#imaginary_container{
-    margin-top:15%; /* Don't copy this */
-}
-.stylish-input-group .input-group-addon{
-    background: white !important; 
-}
-.stylish-input-group .form-control{
-	border-right:0; 
-	box-shadow:0 0 0; 
-	border-color:#ccc;
-}
-.stylish-input-group button{
-    border:0;
-    background:transparent;
-}
-
-  </style>
     
     
 </head>
+
 <body>
-   
- 
-  
-  
-  <!-- Main -->
-  <div class="background">
-     
-      <img src="http://www.wallpapersdb.org/wallpapers/nature/wonderful_nature_1920x1080.jpg" class="bg" height= 100%/>
-      
-    <!-- Header -->
-    
-    <div class="header">
-      <div class = "row">
-      <div class="text-center col-md-4 col-md-offset-4">
-      <h1 class="MapIt">MapIt</h1>  
-      </div>
-      </div>
-      
-      
-      <!-- Search Bar -->
-      
-      <div class="container">
-	<div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container"> 
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
+
+
+    <script src="scripts/app.js"></script>
+
+    <!-- Main -->
+    <div class="background m12 l12 s12">
+
+        <img src="http://www.wallpapersdb.org/wallpapers/nature/wonderful_nature_1920x1080.jpg" class="bg"/>
+
+        <!-- Header -->
+
+        <div class="header">
+            <div class="row">
+                <div class="text-center col-md-4 col-md-offset-4">
+                    <h1 class="MapIt">MapIt</h1>
+                </div>
+            </div>
+
+
+            <!-- Search Bar -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div id="imaginary_container">
+                            <div class="input-group stylish-input-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-addon">
                         <button type="submit">
                             <span class="glyphicon glyphicon-search"></span>
-                        </button>  
-                    </span>
+                                </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-	</div>
-</div>
-     </div>
+
+
+    </div>
+    
+    <div id="map"></div>
     
     
-  </div>
-  
-     
-     
-     
-      
-   
-    
-      
-   
-    
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB30KQNKF_HbAQxk6UsX1Rw-oGjfJEqXzw&callback=initMap"
+        async defer></script>
+
+
+
 </body>
+
 </html>
