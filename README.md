@@ -1,7 +1,6 @@
 # MapIt
 ![Alt-text] (https://cloud.githubusercontent.com/assets/12767206/11650728/6648d28c-9d40-11e5-9ede-b97bf5f508d9.png)
 A web application that allows you to discover tourist attractions in the city of your choice. 
-[![Git stars] (https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)]()
 
 Languages/Frameworks: Front-end: HTML, CSS, JavaScript Back-end: Google Maps API 
 
