@@ -1,7 +1,7 @@
 # MapIt
 [![Travis Status](https://img.shields.io/travis/therealAJ/MapIt/master.svg)](https://travis-ci.org/therealAJ/MapIt)
 [![License] (https://img.shields.io/badge/license-MIT%20License-blue.svg)]()
-[![Git Stars](https://img.shields.io/github/stars/therealAJ/node-web-crawler.svg)](https://github.com/therealAJ/node-web-crawler)
+[![Git Stars](https://img.shields.io/github/stars/therealAJ/MapIt.svg)](https://github.com/therealAJ/node-web-crawler)
 [![Version] (https://img.shields.io/badge/version-0.1.0-orange.svg)]()
 
 A web application that allows you to discover tourist attractions in the city of your choice. 
