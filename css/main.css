@@ -6,7 +6,7 @@
     height: 100vh;
     min-height: 100%;
     max-height: 100%;
-    background: url(wonderful_nature_1920x1080.jpg) center center fixed;
+    background: url(/img/wonderful_nature_1920x1080.jpg) center center fixed;
     background-size: cover;
     color: #ddd;
     text-shadow: 3px 4px #333;
@@ -19,21 +19,18 @@
 }
 
 #map {
-    
     height: 100vh;
     width: 100%;
     min-height: 100%;
     max-height: 100%;
     background-size: cover;
-    margin-top: -20px; 
+    margin-top: -20px;
 }
 
 .default-text {
-    
     font-family: 'Pacifico';
 }
 
 .search-btn {
-    
     padding-top: 62px !important;
 }
