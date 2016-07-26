@@ -4,8 +4,9 @@
 
 .section-1 {
     height: 100vh;
-    width: 100vh;
-    background: url(/img/wonderful_nature_1920x1080.jpg) no-repeat center center fixed;
+    min-height: 100%;
+    max-height: 100%;
+    background: url(/img/wonderful_nature_1920x1080.jpg) center center fixed;
     background-size: cover;
     color: #ddd;
     text-shadow: 3px 4px #333;
@@ -27,6 +28,23 @@
     font-family: 'Pacifico', cursive;
 }
 
+#search-container {
+    height: 400px;
+    background: rgba(0, 9, 0, 0.8);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+}
+
+#search-bar {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 20px;
+}
+
 #attraction-container {
     height: 500px;
     background-color: peachpuff;
@@ -43,4 +61,10 @@
 
 .search-btn {
     padding-top: 62px !important;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 20px;
 }

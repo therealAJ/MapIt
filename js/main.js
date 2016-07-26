@@ -1,12 +1,16 @@
 var map;
 
+var infowindow;
+
+var service;
+
 var input;
 var autocomplete;
 
 var cityName;
 var cityLat;
 var cityLon;
-
+var location;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -26,10 +30,48 @@ function initMap() {
         cityName = place.name;
         cityLat = place.geometry.location.lat();
         cityLon = place.geometry.location.lng();
+
     });
+
 }
 
 function findTopLocations() {
+
+
+    infowindow = new google.maps.InfoWindow();
+
+    var inputLocation = {
+        lat: cityLat,
+        lng: cityLon
+    }
+
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: inputLocation,
+        radius: 500,
+        type: ['store']
+    }, callback);
+}
+
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+    }
+}
+
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
 
 }
 
