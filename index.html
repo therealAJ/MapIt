@@ -21,28 +21,25 @@
 <body>
 
     <div id="content">
-
         <!--MapIt-->
-        <div class="row section-1 valign-wrapper">
-            <div class="col l12 s12 m12 ">
-
+        <div class="row section-1">
+            <div class="col l12 s12 m12">
                 <h1 class="MapIt center">MapIt</h1>
-
                 <div class="row container">
                     <div class="container input-field center default-text search-bar col s11.5 m11 l11">
-                        <input placeholder="Enter city name" id="first_name" type="text" class="validate default-text" style="font-size: 2.5em; height:100px;">
+                        <input id="city-name" autocomplete="on" type="text" class="validate default-text pink-text" style="font-size: 2.5em; height:100px;">
                         <label for="first_name"></label>
                     </div>
                     <div class="col s1 l1 m1 search-btn">
-                        <a id="search-button" class="btn-floating btn-large waves-effect waves-light blue" href="#map"><i class="fa fa-search"></i></a>
-
+                        <a id="search-button" class="btn-floating btn-large waves-effect waves-light blue" href="#map" onclick="findTopLocations()"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div id="map" class="col s10 l10 m10"></div>
+            <div id="attraction-container" class="col s6 m6 l6"></div>
+            <div id="map" class="col s6 l6 m6"></div>
         </div>
 
     </div>
@@ -51,7 +48,7 @@
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB30KQNKF_HbAQxk6UsX1Rw-oGjfJEqXzw&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB30KQNKF_HbAQxk6UsX1Rw-oGjfJEqXzw&libraries=places&callback=initMap"></script>
 
 </body>
 
