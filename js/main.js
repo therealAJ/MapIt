@@ -12,7 +12,11 @@ var cityLat;
 var cityLon;
 var location;
 
+//Array of Location Markers
 var markers = [];
+
+//Array of Places Nearby;
+var places = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -64,9 +68,28 @@ function findTopLocations() {
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+            places.push(results[i].name);
             createMarker(results[i]);
         }
+        createHtmlList();
     }
+}
+
+function createHtmlList() {
+
+    var items = [];
+
+    $.each(places, function (i, item) {
+        items.push('<li id="' + i + '"><a href="">' + places[i] + '</a></li>');
+    });
+
+    $('#stores').append(items);
+}
+
+function emptyList() {
+    setMapOnAll(null);
+    markers = [];
+    $('ul').empty();
 }
 
 function createMarker(place) {
