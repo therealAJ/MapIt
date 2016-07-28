@@ -12,6 +12,8 @@ var cityLat;
 var cityLon;
 var location;
 
+var markers = [];
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -37,7 +39,6 @@ function initMap() {
 
 function findTopLocations() {
 
-
     infowindow = new google.maps.InfoWindow();
 
     var inputLocation = {
@@ -51,6 +52,13 @@ function findTopLocations() {
         radius: 500,
         type: ['store']
     }, callback);
+
+    setMapOnAll(null);
+    markers = [];
+    map.setCenter(inputLocation);
+    map.setZoom(15);
+
+
 }
 
 function callback(results, status) {
@@ -68,12 +76,22 @@ function createMarker(place) {
         position: place.geometry.location
     });
 
+    //add marker to array
+    markers.push(marker);
+
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
     });
 
 }
+
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
+
 
 
 
