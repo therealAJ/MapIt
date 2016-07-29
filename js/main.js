@@ -18,6 +18,7 @@ var markers = [];
 //Array of Places Nearby;
 var restaurants = [];
 var clubs = [];
+var malls = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -51,9 +52,11 @@ function findTopLocations() {
         lng: cityLon
     }
 
+    emptyList();
+
     findTopRestaurants(inputLocation);
     findTopNightlife(inputLocation);
-    //    findTopMalls(inputLocation);
+    findTopMalls(inputLocation);
 
     map.setCenter(inputLocation);
     map.setZoom(15);
@@ -67,7 +70,7 @@ function findTopRestaurants(location) {
         location: location,
         radius: 500,
         type: ['restaurant']
-    }, callback);
+    }, restaurantCallback);
 
 }
 
@@ -77,12 +80,22 @@ function findTopNightlife(location) {
         location: location,
         radius: 500,
         type: ['night_club']
-    }, callback1);
+    }, nightLifeCallback);
+
+}
+
+function findTopMalls(location) {
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: location,
+        radius: 500,
+        type: ['shopping_mall']
+    }, shoppingCallback);
 
 }
 
 
-function callback(results, status) {
+function restaurantCallback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
 
         for (var i = 0; i < results.length; i++) {
@@ -93,7 +106,7 @@ function callback(results, status) {
     }
 }
 
-function callback1(results, status) {
+function nightLifeCallback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
 
         for (var i = 0; i < results.length; i++) {
@@ -101,6 +114,17 @@ function callback1(results, status) {
             createMarker(results[i]);
         }
         createNightLifeHtmlList();
+    }
+}
+
+function shoppingCallback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+        for (var i = 0; i < results.length; i++) {
+            malls.push(results[i].name);
+            createMarker(results[i]);
+        }
+        createShoppingHtmlList();
     }
 }
 
@@ -128,10 +152,24 @@ function createNightLifeHtmlList() {
     $('#night-life').append(items);
 }
 
+function createShoppingHtmlList() {
+
+    var items = [];
+
+    $.each(malls, function (i, item) {
+        items.push('<li id="' + i + '">' + malls[i] + '</li>');
+    });
+
+    $('#malls').append(items);
+}
+
+
 function emptyList() {
     setMapOnAll(null);
     markers = [];
-    places = [];
+    restaurants = [];
+    clubs = [];
+    malls = [];
     $('ul').empty();
 }
 

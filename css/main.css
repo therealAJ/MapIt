@@ -23,13 +23,18 @@
 */
 
 .MapIt {
+    margin-top: 80px;
     color: beige;
     font-size: 8em;
     font-family: 'Pacifico', cursive;
 }
 
+.default-text {
+    font-family: 'Nunito', sans-serif;
+}
+
 #search-container {
-    height: 400px;
+    height: 500px;
     background: rgba(0, 9, 0, 0.8);
     padding-left: 30px;
     padding-right: 30px;
@@ -46,8 +51,12 @@
 }
 
 #attraction-container {
-    height: 500px;
-    background-color: peachpuff;
+    height: 1000px;
+    background-color: #C2D3CD;
+}
+
+.location-col {
+    text-align: center;
 }
 
 #map {
