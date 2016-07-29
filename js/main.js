@@ -1,9 +1,5 @@
 var map;
 
-var infowindow;
-
-var service;
-
 var input;
 var autocomplete;
 
@@ -14,6 +10,10 @@ var location;
 
 //Array of Location Markers
 var markers = [];
+
+var resturantMarkers = [];
+var clubMarkers = [];
+var mallMarkers = [];
 
 //Array of Places Nearby;
 var restaurants = [];
@@ -97,7 +97,6 @@ function findTopMalls(location) {
 
 function restaurantCallback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-
         for (var i = 0; i < results.length; i++) {
             restaurants.push(results[i].name);
             createMarker(results[i]);
@@ -174,6 +173,9 @@ function emptyList() {
 }
 
 function createMarker(place) {
+
+    var infowindow = new google.maps.InfoWindow();
+
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
@@ -190,7 +192,13 @@ function createMarker(place) {
 
 }
 
+
 function setMapOnAll(map) {
+
+    //    markers.concat(resturantMarkers);
+    //    markers.concat(clubMarkers);
+    //    markers.concat(mallMarkers);
+
     for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(map);
     }
