@@ -1,4 +1,6 @@
 var map;
+var geocoder;
+var infowindow;
 
 var input;
 var autocomplete;
@@ -20,6 +22,10 @@ var restaurants = [];
 var clubs = [];
 var malls = [];
 
+
+// Length of 
+
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -28,6 +34,8 @@ function initMap() {
         },
         zoom: 8
     });
+
+    infowindow = new google.maps.InfoWindow();
 
     input = document.getElementById('city-name');
     autocomplete = new google.maps.places.Autocomplete(input);
@@ -44,8 +52,6 @@ function initMap() {
 }
 
 function findTopLocations() {
-
-    infowindow = new google.maps.InfoWindow();
 
     var inputLocation = {
         lat: cityLat,
@@ -119,6 +125,7 @@ function nightLifeCallback(results, status) {
 function shoppingCallback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
 
+
         for (var i = 0; i < results.length; i++) {
             malls.push(results[i].name);
             createMarker(results[i]);
@@ -174,19 +181,17 @@ function emptyList() {
 
 function createMarker(place) {
 
-    var infowindow = new google.maps.InfoWindow();
-
     var placeLoc = place.geometry.location;
+
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: placeLoc
     });
-
     //add marker to array
     markers.push(marker);
 
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
+        infowindow.setContent("<div class='default-text window-text'> <div class='place-title'>" + place.name + "</div>" + "<br>" + place.vicinity + "<br>" + "&#9733;" + place.rating + "</div>");
         infowindow.open(map, this);
     });
 

@@ -6,7 +6,7 @@
     height: 100vh;
     min-height: 100%;
     max-height: 100%;
-    background: url(/img/wonderful_nature_1920x1080.jpg) center center fixed;
+    background: url(./../img/background.jpg) center center fixed;
     background-size: cover;
     color: #ddd;
     text-shadow: 3px 4px #333;
@@ -66,6 +66,14 @@
 .default-text {
     font-family: 'Times New Roman;
 
+}
+
+.window-text {
+    font-size: 14px;
+}
+
+.place-title {
+    font-size: 18px;
 }
 
 .search-btn {
